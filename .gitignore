@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +128,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+=======
+kubectl
+minikube-linux-amd64
+>>>>>>> 846b6af7b8d38d9fa09873fc1a2e27dd0dd09267

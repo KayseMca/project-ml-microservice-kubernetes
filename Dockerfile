@@ -15,10 +15,14 @@ WORKDIR /app
 
 COPY . app.py /app/
 
-RUN pip install --upgrade pip &&\
-	pip install --trusted-host pypi.python.org -r requirements.txt
+COPY ./requirements.txt /app/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade pip &&\
+	pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+	
+COPY . /app
 ## Step 4:
-Expose port 80
+EXPOSE  80
 
 ## Step 5:
 # Run app.py at container launch

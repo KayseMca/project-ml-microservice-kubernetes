@@ -17,8 +17,9 @@ COPY . app.py /app/
 
 COPY ./requirements.txt /app/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade pip &&\
-	pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --no-cache-dir --upgrade  pip &&\
+	pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt  &&\
+    rm -rf /var/lib/apt/lists/*
 	
 COPY . /app
 ## Step 4:

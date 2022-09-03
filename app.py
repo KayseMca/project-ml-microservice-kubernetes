@@ -7,6 +7,7 @@ import logging
 import json
 import pandas as pd
 from sklearn.externals import joblib
+
 from sklearn.preprocessing import StandardScaler
 import os, sys
 
@@ -73,18 +74,6 @@ def predict():
     LOG.info(f"prediction payload: \n{prediction}")
     sys.stdout.flush()
     # copy the result to file
-    join_path = os.path.join(path, "output_txt_files", "docker_out.txt")
-    try:
-        with open(join_path,'w') as f:
-            f.write(str(json_payload))
-            print("######interface")
-            # f.write(json.dumps(inference_payload.to_dict()))
-            # print("######scaled")
-            # f.write(json.dumps(scaled_payload))
-            # print("######prediciton")
-            # f.write(json.dumps(prediction))
-    except:
-        print("File not found or path")
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":

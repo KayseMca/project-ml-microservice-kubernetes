@@ -3,25 +3,24 @@
 ## Step 1:
 # Create a working directory
 
+FROM python:3.7.3-stretch
+
+WORKDIR /app
+
+COPY . app.py /app/
 ## Step 2:
 # Copy source code to working directory
 
 ## Step 3:
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
-FROM python:3.7.3-stretch
-
-WORKDIR /app
-
-COPY . app.py /app/
+RUN pip install --no-cache-dir --upgrade  pip &&\
+	pip install --no-cache-dir --trusted-host pypi.python.org -requirement requirements.txt  &&\
+    rm -rf /var/lib/apt/lists/*
 
 COPY ./requirements.txt /app/requirements.txt
-
-RUN pip install --no-cache-dir --upgrade  pip &&\
-	pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt  &&\
-    rm -rf /var/lib/apt/lists/*
-	
 COPY . /app
+
 ## Step 4:
 EXPOSE  80
 

@@ -4,9 +4,8 @@
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
 import logging
-import joblib as jb
 import pandas as pd
-# from sklearn.externals import joblib
+from sklearn.externals import joblib
 
 from sklearn.preprocessing import StandardScaler
 
@@ -76,5 +75,5 @@ def predict():
 
 if __name__ == "__main__":
     # load pretrained model as clf
-    clf = jb.load("./model_data/boston_housing_prediction.joblib")
+    clf = joblib.load("./model_data/boston_housing_prediction.joblib")
     app.run(host='0.0.0.0', port=80, debug=True) # specify port=80

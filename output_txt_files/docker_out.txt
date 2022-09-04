@@ -1,12 +1,22 @@
-<paste log output from Docker prediction, here>
-172.17.0.1 - - [03/Sep/2022 09:36:44] "GET / HTTP/1.1" 200 -
-prediciting
-[2022-09-03 09:48:43,264] INFO in app: Inference payload DataFrame: 
+<paste log output from Docker prediction, here>"I am using aws cloud9"
+85.110.78.238 - - [04/Sep/2022 14:37:17] "GET / HTTP/1.1" 200 -
+[2022-09-04 14:37:26,578] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2022-09-04 14:37:26,600] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2022-09-03 09:48:43,281] INFO in app: Scaling Payload: 
+[2022-09-04 14:37:26,616] INFO in app: Scaling Payload: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2022-09-03 09:48:43,303] INFO in app: prediction payload: 
+[2022-09-04 14:37:26,619] INFO in app: prediction payload: 
 [20.35373177134412]
-172.17.0.1 - - [03/Sep/2022 09:48:43] "POST /predict HTTP/1.1" 200 -
+172.31.43.61 - - [04/Sep/2022 14:37:26] "POST /predict HTTP/1.1" 200 -
+
+
+ec2-user:~/environment/project-ml-microservice-kubernetes (main) $ ./make_prediction.sh 
+Port: 80
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}

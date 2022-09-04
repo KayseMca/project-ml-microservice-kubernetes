@@ -11,7 +11,7 @@ dockerpath=dockerkayse/microservices-api
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 docker login
-docker --t microservices-api $dockerpath
+docker tag microservices-api $dockerpath
 
 # Step 3:
 # Push image to a docker repository

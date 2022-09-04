@@ -1,1 +1,16 @@
 <paste log output from Kubernetes-mediated prediction, here>
+
+(.devops) ec2-user:~/environment/project-ml-microservice-kubernetes (main) $ ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "microservices-api" already exists
+NAME                READY   STATUS    RESTARTS   AGE
+microservices-api   1/1     Running   0          97s
+Forwarding from 0.0.0.0:8000 -> 80
+Handling connection for 8000
+
+ec2-user:~/environment/project-ml-microservice-kubernetes (main) $ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
